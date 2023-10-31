@@ -1,0 +1,14 @@
+version: '3.3'
+services:
+    openttd:
+        ports:
+            - '3979:3979/tcp'
+            - '3979:3979/udp'
+        volumes:
+            - '/home/.openttd:/home/openttd/.openttd'
+        environment:
+            - PUID=1000
+            - PGID=1000
+            - loadgame=true
+            - savename=denhac.sav
+        image: 'bateau/openttd:latest'
